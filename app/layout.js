@@ -5,10 +5,10 @@ import "./globals.css";
 const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"], weight: ["600", "700", "800"] });
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 
-const __jsonld = {"@context":"https://schema.org","@type":"Store","name":"LuxeElectro","description":"Toko audio pribadi dengan lini produk Luxe","url":"https://landing-luxeelectro.vercel.app"};
+const __jsonld = {"@context":"https://schema.org","@type":"Store","name":"LuxeElectro","description":"Toko audio pribadi dengan lini produk Luxe","url":"https://landing-luxeelectro.pintuweb.id"};
 
 export const metadata = {
-  metadataBase: new URL("https://landing-luxeelectro.vercel.app"),
+  metadataBase: new URL("https://landing-luxeelectro.pintuweb.id"),
   title: { default: "LuxeElectro — Audio dengan Spesifikasi yang Ditulis Lengkap", template: "%s — LuxeElectro" },
   description: "LuxeElectro: headphone, earphone, DAC, dan speaker meja lini Luxe dengan lembar spesifikasi lengkap, kurva respons frekuensi, dan uji dengar 14 hari di rumah.",
   applicationName: "LuxeElectro",
@@ -16,11 +16,11 @@ export const metadata = {
   authors: [{ name: "LuxeElectro" }],
   creator: "LuxeElectro",
   publisher: "LuxeElectro",
-  alternates: { canonical: "https://landing-luxeelectro.vercel.app" },
+  alternates: { canonical: "https://landing-luxeelectro.pintuweb.id" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://landing-luxeelectro.vercel.app",
+    url: "https://landing-luxeelectro.pintuweb.id",
     siteName: "LuxeElectro",
     title: "LuxeElectro — Audio dengan Spesifikasi yang Ditulis Lengkap",
     description: "LuxeElectro: headphone, earphone, DAC, dan speaker meja lini Luxe dengan lembar spesifikasi lengkap, kurva respons frekuensi, dan uji dengar 14 hari di rumah.",

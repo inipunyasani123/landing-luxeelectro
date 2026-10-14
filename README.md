@@ -2,7 +2,7 @@
 
 LuxeElectro: headphone, earphone, DAC, dan speaker meja lini Luxe dengan lembar spesifikasi lengkap, kurva respons frekuensi, dan uji dengar 14 hari di rumah.
 
-**Demo live:** https://landing-luxeelectro.vercel.app
+**Demo live:** https://landing-luxeelectro.pintuweb.id
 
 ![Tangkapan layar LuxeElectro](public/og.jpg)
 
