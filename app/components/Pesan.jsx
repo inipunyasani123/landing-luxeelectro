@@ -18,8 +18,8 @@ export default function Pesan() {
   const input = 'w-full border border-slate-deep/20 bg-white px-4 py-3 text-slate-deep focus:border-violet-spec focus:outline-none';
 
   return (
-    <section id="pesan" className="scroll-mt-16 bg-slate-deep px-6 py-20 text-lume md:py-28">
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+    <section id="pesan" className="scroll-mt-16 bg-slate-deep px-6 py-16 text-lume md:py-28">
+      <div className="mx-auto grid max-w-6xl gap-8 md:gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
         <div>
           <p className="spec-label text-violet-light">Uji dengar 14 hari</p>
           <h2 className="mt-4 text-[2rem] leading-[1.1] font-extrabold text-lume md:text-[2.7rem]">Kirim ke rumah, dengar dua minggu, baru putuskan</h2>
@@ -37,12 +37,12 @@ export default function Pesan() {
             <form onSubmit={(e) => { e.preventDefault(); setSelesai(true); }} className="space-y-5">
               <fieldset>
                 <legend className="spec-label mb-3">Perangkat</legend>
-                <div className="grid gap-2 sm:grid-cols-2">
+                <div className="grid grid-cols-2 gap-2">
                   {PRODUK.map((p) => (
-                    <label key={p.slug} className={`flex cursor-pointer items-center justify-between gap-3 border px-4 py-3 ${produk === p.slug ? 'border-violet-spec bg-violet-spec/8' : 'border-slate-deep/15'}`}>
+                    <label key={p.slug} className={`flex cursor-pointer flex-col justify-between gap-0.5 border px-3 py-2.5 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-violet-spec sm:flex-row sm:items-center sm:gap-3 sm:px-4 sm:py-3 ${produk === p.slug ? 'border-violet-spec bg-violet-spec/8' : 'border-slate-deep/15'}`}>
                       <input type="radio" name="produk" value={p.slug} checked={produk === p.slug} onChange={() => setProduk(p.slug)} className="sr-only" />
                       <span className="font-semibold">{p.nama}</span>
-                      <span className="spec-num text-sm text-lume-dim">{rp(p.harga)}</span>
+                      <span className="spec-num text-xs whitespace-nowrap text-lume-dim sm:text-sm">{rp(p.harga)}</span>
                     </label>
                   ))}
                 </div>

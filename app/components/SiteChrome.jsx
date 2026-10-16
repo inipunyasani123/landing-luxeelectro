@@ -1,19 +1,19 @@
 import Link from 'next/link';
+import Navigasi from './Navigasi';
 import { PRODUK } from '@/lib/produk';
 
 export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-lume/10 bg-slate-deep/90 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-6">
         <Link href="/" className="font-[family-name:var(--font-manrope)] text-lg font-extrabold tracking-tight text-lume">
           Luxe<span className="text-violet-light">Electro</span>
         </Link>
-        <nav aria-label="Navigasi utama" className="hidden items-center gap-7 md:flex">
-          {[['/#spesifikasi', 'Spesifikasi'], ['/#lini', 'Lini Luxe'], ['/bandingkan', 'Bandingkan'], ['/#perlindungan', 'Perlindungan']].map(([h, l]) => (
-            <Link key={h} href={h} className="spec-label text-lume/80 hover:text-lume">{l}</Link>
-          ))}
-        </nav>
-        <Link href="/#pesan" className="inline-flex bg-violet-spec px-4 py-2.5 text-sm font-bold text-white hover:bg-violet-spec-2">Pesan uji dengar</Link>
+        <Navigasi>
+          <Link href="/#pesan" className="inline-flex h-10 items-center bg-violet-spec px-3 text-sm font-bold whitespace-nowrap text-white hover:bg-violet-spec-2 sm:px-4">
+            Uji dengar<span className="hidden sm:inline">&nbsp;14 hari</span>
+          </Link>
+        </Navigasi>
       </div>
     </header>
   );

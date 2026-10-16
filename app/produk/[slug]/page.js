@@ -4,6 +4,13 @@ import { PRODUK, SITE, produkBySlug, rp } from '@/lib/produk';
 import PanelSpek from '../../components/PanelSpek';
 import Kurva from '../../components/Kurva';
 
+/* Deskripsi meta maksimal 155 karakter: dipotong di akhir kalimat bila bisa, kalau tidak di batas kata. */
+const ringkas = (t, n = 155) => {
+  if (t.length <= n) return t;
+  const titik = t.lastIndexOf('. ', n - 1);
+  return titik > 80 ? t.slice(0, titik + 1) : `${t.slice(0, t.lastIndexOf(' ', n - 1))}…`;
+};
+
 export function generateStaticParams() {
   return PRODUK.map((p) => ({ slug: p.slug }));
 }
@@ -14,7 +21,7 @@ export async function generateMetadata({ params }) {
   if (!p) return {};
   return {
     title: `${p.nama} — ${p.kategori}`,
-    description: `Lembar spesifikasi ${p.nama}: ${p.spek.driver}, ${p.spek.respons}, ${p.spek.berat}. ${p.ringkas}`,
+    description: ringkas(`Lembar spesifikasi ${p.nama} (${p.kategori.toLowerCase()}): ${p.ringkas} Respons ${p.spek.respons}, berat ${p.spek.berat}.`),
     alternates: { canonical: `${SITE}/produk/${p.slug}` },
   };
 }

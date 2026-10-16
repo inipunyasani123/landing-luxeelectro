@@ -7,12 +7,14 @@ const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 
 const __jsonld = {"@context":"https://schema.org","@type":"Store","name":"LuxeElectro","description":"Toko audio pribadi dengan lini produk Luxe","url":"https://landing-luxeelectro.pintuweb.id"};
 
+const DESKRIPSI = "LuxeElectro: headphone, earphone, DAC, dan speaker meja lini Luxe dengan spesifikasi lengkap, kurva respons frekuensi, dan uji dengar 14 hari di rumah.";
+
 export const metadata = {
   metadataBase: new URL("https://landing-luxeelectro.pintuweb.id"),
   title: { default: "LuxeElectro — Audio dengan Spesifikasi yang Ditulis Lengkap", template: "%s — LuxeElectro" },
-  description: "LuxeElectro: headphone, earphone, DAC, dan speaker meja lini Luxe dengan lembar spesifikasi lengkap, kurva respons frekuensi, dan uji dengar 14 hari di rumah.",
+  description: DESKRIPSI,
   applicationName: "LuxeElectro",
-  keywords: ["elektronik premium", "gadget", "home appliance", "toko elektronik", "gadget mewah"],
+  keywords: ["headphone tertutup", "earphone in-ear", "DAC portabel", "speaker meja aktif", "kurva respons frekuensi"],
   authors: [{ name: "LuxeElectro" }],
   creator: "LuxeElectro",
   publisher: "LuxeElectro",
@@ -23,13 +25,13 @@ export const metadata = {
     url: "https://landing-luxeelectro.pintuweb.id",
     siteName: "LuxeElectro",
     title: "LuxeElectro — Audio dengan Spesifikasi yang Ditulis Lengkap",
-    description: "LuxeElectro: headphone, earphone, DAC, dan speaker meja lini Luxe dengan lembar spesifikasi lengkap, kurva respons frekuensi, dan uji dengar 14 hari di rumah.",
+    description: DESKRIPSI,
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "LuxeElectro — Audio dengan Spesifikasi yang Ditulis Lengkap" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "LuxeElectro — Audio dengan Spesifikasi yang Ditulis Lengkap",
-    description: "LuxeElectro: headphone, earphone, DAC, dan speaker meja lini Luxe dengan lembar spesifikasi lengkap, kurva respons frekuensi, dan uji dengar 14 hari di rumah.",
+    description: DESKRIPSI,
     images: ["/og.jpg"],
   },
   robots: {

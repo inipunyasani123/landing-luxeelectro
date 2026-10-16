@@ -8,9 +8,9 @@ const H1 = PRODUK[0];
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-slate-deep px-6 pt-32 pb-20 text-lume md:pt-40 md:pb-28">
+    <section className="relative overflow-hidden bg-slate-deep px-6 pt-24 pb-14 text-lume md:pt-40 md:pb-28">
       <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(60%_50%_at_75%_30%,rgb(106_74_224/0.28),transparent_70%)]" />
-      <div className="relative mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 md:gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         <div>
           <p className="spec-label text-violet-light">Lini Luxe · audio pribadi</p>
           <h1 className="mt-5 text-[2.6rem] leading-[1.04] font-extrabold text-lume sm:text-5xl lg:text-[3.6rem]">
@@ -20,7 +20,7 @@ export function Hero() {
             Headphone, earphone, DAC, dan speaker meja dengan lembar spesifikasi yang tidak menyembunyikan apa pun —
             dan 14 hari untuk mendengarnya sendiri sebelum memutuskan.
           </p>
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4 md:mt-9">
             <Link href={`/produk/${H1.slug}`} className="inline-flex justify-center bg-violet-spec px-7 py-4 font-bold text-white hover:bg-violet-spec-2">
               Lembar spesifikasi {H1.nama}
             </Link>
@@ -30,11 +30,11 @@ export function Hero() {
           </div>
         </div>
         <figure className="relative">
-          <Image src="/images/headphones.jpg" alt="Headphone over-ear hitam tergeletak di atas meja kayu gelap" width={960} height={641} priority className="h-auto w-full" />
-          <figcaption className="absolute right-4 bottom-4 left-4 grid grid-cols-3 gap-px bg-lume/15 sm:left-auto sm:w-80">
+          <Image src="/images/headphones.jpg" alt="Headphone over-ear hitam tergeletak di atas meja kayu gelap" width={960} height={641} priority sizes="(min-width: 1152px) 34rem, (min-width: 1024px) 46vw, 100vw" className="h-auto w-full" />
+          <figcaption className="grid grid-cols-3 gap-px bg-lume/15 sm:absolute sm:right-4 sm:bottom-4 sm:w-80">
             {[['Driver', '50 mm'], ['Impedansi', '32 Ω'], ['Sensitivitas', '103 dB']].map(([k, v]) => (
-              <span key={k} className="bg-slate-deep/90 p-3 backdrop-blur-sm">
-                <span className="spec-label block text-violet-light">{k}</span>
+              <span key={k} className="bg-slate-deep-2 p-3 sm:bg-slate-deep/90 sm:backdrop-blur-sm">
+                <span className="spec-label block tracking-[0.12em] text-violet-light">{k}</span>
                 <span className="spec-num mt-1 block text-lume">{v}</span>
               </span>
             ))}
@@ -47,18 +47,18 @@ export function Hero() {
 
 export function Spesifikasi() {
   return (
-    <section id="spesifikasi" className="scroll-mt-16 bg-slate-deep-2 px-6 py-20 text-lume md:py-28">
+    <section id="spesifikasi" className="scroll-mt-16 bg-slate-deep-2 px-6 py-16 text-lume md:py-28">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div className="mb-8 flex flex-col justify-between gap-4 md:mb-12 md:flex-row md:items-end md:gap-6">
           <div className="max-w-2xl">
             <p className="spec-label text-violet-light">Panel spesifikasi · {H1.nama}</p>
             <h2 className="mt-4 text-[2rem] leading-[1.1] font-extrabold text-lume md:text-[2.7rem]">Tidak ada “suara premium”. Ada angka, dan cara membacanya.</h2>
           </div>
           <p className="spec-num text-3xl text-lume">{rp(H1.harga)}</p>
         </div>
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+        <div className="grid gap-6 md:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           <PanelSpek spek={H1.spek} />
-          <div className="border border-lume/12 p-6">
+          <div className="border border-lume/12 p-5 sm:p-6">
             <Kurva seri={[H1]} judul={`Kurva respons frekuensi ${H1.nama}`} />
             <p className="mt-5 leading-relaxed text-lume/85">
               Bas naik sedikit di bawah 100 Hz, rata di nada tengah, dan puncak lembut di 3 kHz yang membuat vokal terdengar di depan.
@@ -73,19 +73,19 @@ export function Spesifikasi() {
 
 export function Lini() {
   return (
-    <section id="lini" className="scroll-mt-16 bg-lume px-6 py-20 md:py-28">
+    <section id="lini" className="scroll-mt-16 bg-lume px-6 py-16 md:py-28">
       <div className="mx-auto max-w-6xl">
         <p className="spec-label text-violet-spec">Lini Luxe</p>
         <h2 className="mt-4 max-w-2xl text-[2rem] leading-[1.1] font-extrabold text-slate-deep md:text-[2.7rem]">Empat perangkat, satu lembar spesifikasi masing-masing</h2>
-        <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-8 grid grid-cols-2 gap-3 sm:gap-6 md:mt-12 lg:grid-cols-4">
           {PRODUK.map((p) => (
             <li key={p.slug}>
-              <Link href={`/produk/${p.slug}`} className="group flex h-full flex-col border border-slate-deep/12 bg-white p-6 transition-colors hover:border-violet-spec">
-                <span className="spec-num text-5xl text-violet-spec">{p.kode}</span>
-                <h3 className="mt-4 text-xl font-extrabold text-slate-deep">{p.nama}</h3>
-                <span className="spec-label mt-1 text-lume-dim">{p.kategori}</span>
-                <span className="mt-4 text-sm leading-relaxed text-lume-dim">{p.ringkas}</span>
-                <span className="spec-num mt-auto pt-6 text-lg text-slate-deep">{rp(p.harga)}</span>
+              <Link href={`/produk/${p.slug}`} className="group flex h-full flex-col border border-slate-deep/12 bg-white p-4 transition-colors hover:border-violet-spec sm:p-6">
+                <span className="spec-num text-4xl text-violet-spec sm:text-5xl">{p.kode}</span>
+                <h3 className="mt-3 text-lg font-extrabold text-slate-deep sm:mt-4 sm:text-xl">{p.nama}</h3>
+                <span className="spec-label mt-1 leading-snug tracking-[0.12em] text-lume-dim sm:tracking-[0.2em]">{p.kategori}</span>
+                <span className="mt-3 hidden text-sm leading-relaxed text-lume-dim sm:mt-4 sm:block">{p.ringkas}</span>
+                <span className="spec-num mt-auto pt-4 text-base text-slate-deep sm:pt-6 sm:text-lg">{rp(p.harga)}</span>
               </Link>
             </li>
           ))}
@@ -97,8 +97,8 @@ export function Lini() {
 
 export function Layanan() {
   return (
-    <section className="bg-white px-6 py-20 md:py-24">
-      <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
+    <section className="bg-white px-6 py-14 md:py-24">
+      <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3 md:gap-8">
         {LAYANAN.map(([j, d], i) => (
           <div key={j} className="border-t-2 border-violet-spec pt-5">
             <span className="spec-label text-violet-spec">0{i + 1}</span>
@@ -113,13 +113,13 @@ export function Layanan() {
 
 export function Perlindungan() {
   return (
-    <section id="perlindungan" className="scroll-mt-16 bg-lume px-6 py-20 md:py-28">
+    <section id="perlindungan" className="scroll-mt-16 bg-lume px-6 py-16 md:py-28">
       <div className="mx-auto max-w-6xl">
         <p className="spec-label text-violet-spec">Paket perlindungan</p>
         <h2 className="mt-4 max-w-2xl text-[2rem] leading-[1.1] font-extrabold text-slate-deep md:text-[2.7rem]">Garansi bawaan dua tahun. Tambahan, kalau perlu.</h2>
-        <ul className="mt-12 grid gap-6 lg:grid-cols-3">
+        <ul className="mt-8 grid gap-4 md:mt-12 md:gap-6 lg:grid-cols-3">
           {PERLINDUNGAN.map((p) => (
-            <li key={p.nama} className={`flex flex-col p-7 ${p.unggulan ? 'bg-slate-deep text-lume' : 'border border-slate-deep/12 bg-white'}`}>
+            <li key={p.nama} className={`flex flex-col p-6 md:p-7 ${p.unggulan ? 'bg-slate-deep text-lume' : 'border border-slate-deep/12 bg-white'}`}>
               <h3 className={`text-xl font-extrabold ${p.unggulan ? 'text-lume' : 'text-slate-deep'}`}>{p.nama}</h3>
               <p className={`spec-num mt-3 text-3xl ${p.unggulan ? 'text-lume' : 'text-slate-deep'}`}>{rp(p.harga)}</p>
               <ul className={`mt-6 space-y-2.5 border-t pt-6 text-sm ${p.unggulan ? 'border-lume/15 text-lume/85' : 'border-slate-deep/12 text-lume-dim'}`}>
@@ -135,8 +135,8 @@ export function Perlindungan() {
 
 export function FAQ() {
   return (
-    <section className="bg-white px-6 py-20 md:py-28">
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
+    <section className="bg-white px-6 py-16 md:py-28">
+      <div className="mx-auto grid max-w-6xl gap-8 md:gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
         <div>
           <p className="spec-label text-violet-spec">Pertanyaan</p>
           <h2 className="mt-4 text-[2rem] leading-[1.1] font-extrabold text-slate-deep md:text-[2.6rem]">Sebelum membaca lembar spesifikasi</h2>

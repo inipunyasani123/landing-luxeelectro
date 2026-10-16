@@ -37,14 +37,3 @@
   outline: 2px solid var(--color-violet-spec);
   outline-offset: 3px;
 }
-
-/* Pola serat kayu.
-   Menggantikan /images/wood-pattern.webp yang tidak ada di public. */
-.wood-texture {
-  background-image:
-    repeating-linear-gradient(90deg,
-      rgb(90 60 35 / 0.14) 0 2px,
-      transparent 2px 9px,
-      rgb(90 60 35 / 0.08) 9px 10px,
-      transparent 10px 17px);
-}
