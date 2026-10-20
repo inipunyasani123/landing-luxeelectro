@@ -81,6 +81,7 @@ export function Lini() {
           {PRODUK.map((p) => (
             <li key={p.slug}>
               <Link href={`/produk/${p.slug}`} className="group flex h-full flex-col border border-slate-deep/12 bg-white p-4 transition-colors hover:border-violet-spec sm:p-6">
+                <Image src={`/images/produk/${p.slug}.webp`} alt="" width={1200} height={900} sizes="(min-width: 1152px) 15rem, (min-width: 1024px) 22vw, 45vw" className="-mx-4 -mt-4 mb-4 aspect-[4/3] h-auto w-[calc(100%+2rem)] max-w-none object-cover sm:-mx-6 sm:-mt-6 sm:mb-5 sm:w-[calc(100%+3rem)]" />
                 <span className="spec-num text-4xl text-violet-spec sm:text-5xl">{p.kode}</span>
                 <h3 className="mt-3 text-lg font-extrabold text-slate-deep sm:mt-4 sm:text-xl">{p.nama}</h3>
                 <span className="spec-label mt-1 leading-snug tracking-[0.12em] text-lume-dim sm:tracking-[0.2em]">{p.kategori}</span>

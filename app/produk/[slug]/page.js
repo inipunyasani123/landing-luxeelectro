@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { PRODUK, SITE, produkBySlug, rp } from '@/lib/produk';
@@ -31,21 +32,25 @@ export default async function Produk({ params }) {
   const p = produkBySlug(slug);
   if (!p) notFound();
   const lain = PRODUK.filter((x) => x.slug !== p.slug);
-  const ld = { '@context': 'https://schema.org', '@type': 'Product', name: p.nama, category: p.kategori, description: p.ringkas, brand: { '@type': 'Brand', name: 'Luxe' }, offers: { '@type': 'Offer', price: p.harga, priceCurrency: 'IDR' } };
+  const ld = { '@context': 'https://schema.org', '@type': 'Product', name: p.nama, image: `${SITE}/images/produk/${p.slug}.webp`, category: p.kategori, description: p.ringkas, brand: { '@type': 'Brand', name: 'Luxe' }, offers: { '@type': 'Offer', price: p.harga, priceCurrency: 'IDR' } };
 
   return (
     <main className="bg-slate-deep pt-16 text-lume">
-      <header className="px-6 pt-16 pb-14">
-        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
+      <header className="px-6 pt-12 pb-14 md:pt-16">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 md:gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]">
           <div>
             <p className="spec-label text-violet-light"><Link href="/#lini" className="hover:underline">Lini Luxe</Link> · {p.kategori}</p>
             <h1 className="mt-4 text-5xl font-extrabold text-lume md:text-7xl">{p.nama}</h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-lume/85">{p.ringkas}</p>
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+              <p className="spec-num text-3xl text-lume">{rp(p.harga)}</p>
+              <Link href={`/?produk=${p.slug}#pesan`} className="inline-flex bg-violet-spec px-6 py-3.5 font-bold text-white hover:bg-violet-spec-2">Pesan uji dengar</Link>
+            </div>
           </div>
-          <div className="text-left md:text-right">
-            <p className="spec-num text-3xl text-lume">{rp(p.harga)}</p>
-            <Link href={`/?produk=${p.slug}#pesan`} className="mt-4 inline-flex bg-violet-spec px-6 py-3.5 font-bold text-white hover:bg-violet-spec-2">Pesan uji dengar</Link>
-          </div>
+          <figure className="order-first lg:order-none">
+            <Image src={`/images/produk/${p.slug}.webp`} alt={p.gambar} width={1200} height={900} priority sizes="(min-width: 1152px) 37rem, (min-width: 1024px) 50vw, 100vw" className="aspect-[4/3] h-auto w-full border border-lume/10 object-cover" />
+            <figcaption className="spec-label mt-3 text-lume/70">Ilustrasi produk · bukan foto</figcaption>
+          </figure>
         </div>
       </header>
 
@@ -94,7 +99,7 @@ export default async function Produk({ params }) {
             {lain.map((x) => (
               <li key={x.slug}>
                 <Link href={`/produk/${x.slug}`} className="flex items-center gap-4 border border-lume/12 p-5 hover:border-violet-light">
-                  <span className="spec-num text-3xl text-violet-light">{x.kode}</span>
+                  <Image src={`/images/produk/${x.slug}.webp`} alt="" width={96} height={72} className="h-14 w-[4.7rem] shrink-0 object-cover" />
                   <span><span className="block font-bold">{x.nama}</span><span className="text-sm text-lume/80">{x.kategori}</span></span>
                 </Link>
               </li>
