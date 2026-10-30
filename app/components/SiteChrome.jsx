@@ -43,7 +43,7 @@ export function SiteFooter() {
         </nav>
       </div>
       <p className="spec-label mx-auto max-w-6xl border-t border-lume/12 py-6 leading-[1.8] text-lume/70">
-        © 2026 LuxeElectro · Produk, spesifikasi, dan harga adalah contoh untuk purwarupa desain. Foto headphone: Corey Blaz (CC0).
+        © 2026 LuxeElectro · Produk, spesifikasi, dan harga adalah contoh untuk purwarupa desain. Foto: Corey Blaz dan kontributor Wikimedia Commons (CC0), lihat berkas sumber.
       </p>
     </footer>
   );

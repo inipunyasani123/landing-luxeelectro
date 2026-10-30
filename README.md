@@ -30,7 +30,7 @@ Bahasa rupa **Panel Spesifikasi**: gadget dan peralatan rumah premium ditampilka
 
 Foto headphone di hero: ["Headphones Audio"](https://stocksnap.io/photo/headphones-audio-1Y69ONYCCZ) oleh Corey Blaz via StockSnap, lisensi CC0 (domain publik).
 
-Gambar keempat perangkat Luxe (`public/images/produk/`) adalah ilustrasi buatan sendiri untuk produk fiktif, bukan foto. Daftar sumber lengkap: `public/images/SUMBER.md`.
+Foto keempat perangkat Luxe (`public/images/produk/`) adalah foto CC0 dari Wikimedia Commons yang menggambarkan jenis perangkatnya; produk Luxe sendiri fiktif. Daftar sumber lengkap: `public/images/SUMBER.md`.
 
 ## Menjalankan secara lokal
 

@@ -49,7 +49,7 @@ export default async function Produk({ params }) {
           </div>
           <figure className="order-first lg:order-none">
             <Image src={`/images/produk/${p.slug}.webp`} alt={p.gambar} width={1200} height={900} priority sizes="(min-width: 1152px) 37rem, (min-width: 1024px) 50vw, 100vw" className="aspect-[4/3] h-auto w-full border border-lume/10 object-cover" />
-            <figcaption className="spec-label mt-3 text-lume/70">Ilustrasi produk · bukan foto</figcaption>
+            <figcaption className="spec-label mt-3 text-lume/70">Foto gambaran jenis perangkat · bukan unit Luxe</figcaption>
           </figure>
         </div>
       </header>
