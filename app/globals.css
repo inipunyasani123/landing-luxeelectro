@@ -16,13 +16,15 @@
   --color-violet-light: #b9a7ff; /* aksen teks kecil di atas grafit */
 }
 
+html { scroll-padding-top: 5rem; }
+
 @layer base {
   body { font-family: var(--font-inter), system-ui, sans-serif; background-color: var(--color-lume); color: var(--color-violet-spec); }
   h1, h2, h3 { font-family: var(--font-manrope), system-ui, sans-serif; letter-spacing: -0.02em; }
 }
 
 .spec-num { font-variant-numeric: tabular-nums; letter-spacing: 0.02em; font-weight: 700; }
-.spec-label { font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; }
+.spec-label { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

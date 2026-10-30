@@ -39,7 +39,7 @@ export default async function Produk({ params }) {
       <header className="px-6 pt-12 pb-14 md:pt-16">
         <div className="mx-auto grid max-w-6xl items-center gap-8 md:gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]">
           <div>
-            <p className="spec-label text-violet-light"><Link href="/#lini" className="hover:underline">Lini Luxe</Link> · {p.kategori}</p>
+            <p className="spec-label text-violet-light"><Link href="/#lini" className="inline-block py-3 hover:underline">Lini Luxe</Link> · {p.kategori}</p>
             <h1 className="mt-4 text-5xl font-extrabold text-lume md:text-7xl">{p.nama}</h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-lume/85">{p.ringkas}</p>
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
@@ -93,7 +93,7 @@ export default async function Produk({ params }) {
         <div className="mx-auto max-w-6xl">
           <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
             <p className="spec-label text-violet-light">Perangkat lain</p>
-            <Link href={`/bandingkan?a=${p.slug}&b=${lain[0].slug}`} className="spec-label border-b border-violet-light pb-1 text-violet-light">Bandingkan {p.nama} dengan {lain[0].nama}</Link>
+            <Link href={`/bandingkan?a=${p.slug}&b=${lain[0].slug}`} className="spec-label inline-flex min-h-11 items-center border-b border-violet-light text-violet-light">Bandingkan {p.nama} dengan {lain[0].nama}</Link>
           </div>
           <ul className="grid gap-4 sm:grid-cols-3">
             {lain.map((x) => (
